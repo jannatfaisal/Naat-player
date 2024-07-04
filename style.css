@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #264653;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.naat-player{
+    background-color: #F0E5CF;
+    width: 400px;
+    padding: 25px 35px;
+    text-align: center;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+
+}
+
+nav.circle .fa-angle-left{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+     /* background-color: #F0E5CF;
+    color:#264653 ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+
+} 
+
+.naatimg{
+width: 320px;
+height: 30vh;
+border-radius: 5%;
+border: 5px solid #264653;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.naat-player h1{
+    font-size: 20px;
+    font-weight: 700;
+    color: #F0E5CF;
+    margin-top: 20px;
+}
+
+.naat-player p{
+    font-size: 14px;
+    color: #F0E5CF;
+}
+#progress{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background-color: #264653;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 40px 0;
+}
+
+#progress::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: #F0E5CF;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.controls div{
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    background-color: #264653;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+}
+
+.controls div:nth-child(2){
+    transform: scale(1.5);
+    background-color:  #264653;
+    color: #fff;
+
+}
+
+
+
+
+/* Tablets and larger screens */
+@media (min-width: 600px) {
+    .naat-player {
+        max-width: 500px;
+        padding: 30px 40px;
+    }
+
+    .naatimg {
+        max-width: 400px;
+    }
+
+    .naat-player h1 {
+        font-size: 24px;
+    }
+
+    .naat-player p {
+        font-size: 16px;
+    }
+}
+/* Desktops and larger screens */
+@media (min-width: 1024px) {
+    .naat-player {
+        max-width: 600px;
+        padding: 35px 45px;
+    }
+
+    .naatimg {
+        max-width: 500px;
+    }
+
+    .naat-player h1 {
+        font-size: 28px;
+    }
+
+    .naat-player p {
+        font-size: 18px;
+    }
+}
+/* Mobile Devices */
+@media (max-width: 599px) {
+    .naat-player {
+        padding: 20px 25px;
+    }
+
+    .naatimg {
+        max-width: 280px;
+    }
+
+    .naat-player h1 {
+        font-size: 18px;
+    }
+
+    .naat-player p {
+        font-size: 12px;
+    }
+
+    .controls div {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .controls div:nth-child(2) {
+        transform: scale(1.1);
+    }
+}

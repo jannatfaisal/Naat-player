@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naat-Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+<div class="naat-player">
+<nav>
+    <div class="circle">
+        <i class="fa-solid fa-angle-left"></i>
+    </div>
+
+    <div class="circle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+</nav>
+
+
+<img src="./naatimage.jpg" alt="" class="naatimg" width="300">
+<h1>Allah Allah</h1>
+<p> Awais Raza Qadri</p>
+
+<audio  id="naat">
+    <source src="./as subhu.mp3"type="audio/mp3">
+</audio>
+<input type="range" value="0"id="progress">
+
+<div class="controls">
+    <div><i class="fa-solid fa-backward"></i></div>
+    <div onclick="playPause()"><i class="fa-solid fa-play" id="controlicon"></i></div>
+    <div><i class="fa-solid fa-forward"></i></div>
+    
+
+</div>
+</div>
+    </div>
+
+
+    <script>
+        let progress = document.getElementById("progress");
+        let naat = document.getElementById("naat");
+        let controlicon = document.getElementById("controlicon");
+
+        naat.onloadedmetadata =function(){
+             progress.max = naat.duration;
+             progress.value = naat.currentTime;
+        }
+
+
+        function playPause(){
+            if(controlicon.classList.contains("fa-pause")){
+                naat.pause();
+                controlicon.classList.remove("fa-pause");
+                controlicon.classList.add("fa-play");
+            }
+            else{
+                naat.play();
+                controlicon.classList.add("fa-pause");
+                controlicon.classList.remove("fa-play");
+            }
+        }
+
+
+        if(naat.play()){
+            setInterval(()=>{
+progress.value = naat.currentTime;
+            },500);
+        }
+
+
+        progress.onchange = function(){
+            naat.play();
+            naat.currentTime = progress.value;
+
+            controlicon.classList.add("fa-pause");
+                controlicon.classList.remove("fa-play");
+        }
+    </script>
+</body>
+</html>
